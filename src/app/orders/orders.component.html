@@ -1,0 +1,33 @@
+<app-nav-log></app-nav-log>
+
+    <div class="body">
+      <br><br>
+      <div class="row">
+        <div class="col-sm-6" *ngFor="let order of orders">
+          <div class="card">
+            <div class="card-body" style="text-align: center ">
+              <h3 class="card-title"style="text-align:left " >Customer Name : {{ order.customername}}</h3>
+              <h3 class="card-title"style="text-align:left ">Delivery Address:  {{order.deliveraddress}}</h3>
+              <h3 class="card-title"style="text-align:left ">Telephone No:  {{order.telephone}}</h3>
+              <h3 class="card-title"style="text-align:left ">Total Cost:  {{order.total}}</h3>
+              <p class="card-text"></p>
+               <div class="row">
+                <div >
+                  <select (change)="onChange($event)"  class="form-control" >
+                    <option value="rider._id">Riders</option>
+                    <option value={{rider._id}},{{rider.fullName}} *ngFor="let rider of riders">{{rider.fullName}}</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <button type="button" class="btn btn-dark" (click)="conformorder(order)">Conform Order</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+
+
+

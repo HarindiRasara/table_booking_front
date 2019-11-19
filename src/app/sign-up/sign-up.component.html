@@ -1,0 +1,145 @@
+<app-nav></app-nav>
+<div class="body">
+
+      <button class="btn btn-primary" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 30px; font-weight:700"
+        (click)="signUpCustomer()"><i class="fas fa-magic mr-1"></i>Sign up As Customer</button>
+
+<div style ="text-align: center;">
+      <button class="btn " style="font-family: 'ZCOOL XiaoWei', serif;font-size: 30px; font-weight:700;text-align: center;color:black;background-color:rgb(222, 184, 135);"
+        (click)="signUpRestOwner()"><i class="fas fa-magic ml-1"></i>Sign up As Restaurant Owner</button>
+
+
+
+  <br><br>
+
+  <div *ngIf="SignUpAsCustomer">
+    <mat-card class="sign">
+      <form class="form-signUp" #f="ngForm" (ngSubmit)="signUpASCustomer(f.value)" [formGroup]="Customerform">
+        <mat-card-header>
+          <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+        </mat-card-header>
+
+
+         <label for="name"> Name</label>
+        <input formControlName="name" type="text" id="name" class="form-control"
+          placeholder="Enter  Name">
+        <div *ngIf="Customerform.get('name').touched && Customerform.get('name').invalid"
+          class="alert alert-danger">
+           Name Required!
+        </div>
+        <br>
+       <label for="address" >Address</label>
+        <input formControlName="address" type="text" id="address" class="form-control"
+          placeholder="Address">
+        <div *ngIf="Customerform.get('address').touched && Customerform.get('address').invalid"
+          class="alert alert-danger">
+           Address Required!
+        </div>
+        <br>
+        <label for="inputEmail" >Email address</label>
+        <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email address">
+        <div *ngIf="Customerform.get('email').touched && Customerform.get('email').invalid" class="alert alert-danger">
+          <span *ngIf="Customerform.hasError('email', 'email')&&Customerform.get('email').touched">
+            This email not valid.
+          </span>
+          Enter the E-mail
+        </div>
+        <br>
+
+        <label for="inputPassword">Password</label>
+        <input formControlName="password" type="password" id="inputPassword" class="form-control"
+          placeholder="Password">
+        <div *ngIf="Customerform.get('password').touched && Customerform.get('password').invalid"
+          class="alert alert-danger">
+          Password is Required!
+        </div>
+
+         <br>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+      </form>
+
+    </mat-card>
+  </div>
+
+
+  <div *ngIf="SignUpAsResAdmin">
+    <mat-card class="sign">
+      <form class="form-signUp" #f="ngForm" (ngSubmit)="signUpAsRestOwner(f.value)" [formGroup]="Customerform">
+        <mat-card-header>
+          <h1 class="h3 mb-3 font-weight-normal">Restaurant Owner SignUp</h1>
+        </mat-card-header>
+        <br>
+        <label for="restaurentname" >Restaurant Name</label>
+        <input formControlName="restaurentname" type="text" id="restaurentname" class="form-control"
+          placeholder="Restaurant Name">
+        <div *ngIf="Customerform.get('restaurentname').touched && Customerform.get('restaurentname').invalid"
+          class="alert alert-danger">
+          Enter the Restaurant Name
+        </div>
+        <br>
+
+        <label for="firstName">First Name</label>
+        <input formControlName="firstName" type="text" id="firstName" class="form-control"
+          placeholder="Enter First Name">
+        <div *ngIf="Customerform.get('firstName').touched && Customerform.get('firstName').invalid"
+          class="alert alert-danger">
+          First Name Required!
+        </div>
+
+        <br>
+        <label for="lastName" >Last Name</label>
+        <input formControlName="lastName" type="text" id="secondName" class="form-control"
+          placeholder="Enter Last Name">
+        <div *ngIf="Customerform.get('lastName').touched && Customerform.get('lastName').invalid"
+          class="alert alert-danger">
+          Last Name Required!
+        </div>
+        <br>
+
+        <label for="inputEmail" >Email address</label>
+        <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email address">
+        <div *ngIf="Customerform.get('email').touched && Customerform.get('email').invalid" class="alert alert-danger">
+          <span *ngIf="Customerform.hasError('email', 'email')&&Customerform.get('email').touched">
+            This email not valid.
+          </span>
+          Enter the E-mail
+        </div>
+        <br>
+
+        <label for="contactno">Contact No</label>
+        <input formControlName="contactno" type="contactno" id="inputcontactno" class="form-control"
+          placeholder="Contact No">
+        <div *ngIf="Customerform.get('contactno').touched && Customerform.get('contactno').invalid"
+          class="alert alert-danger">
+          Contactno is Required!
+        </div>
+        <br>
+
+        <label for="address">Address</label>
+        <input formControlName="address" type="address" id="inputaddress" class="form-control" placeholder="address">
+        <div *ngIf="Customerform.get('address').touched && Customerform.get('address').invalid"
+          class="alert alert-danger">
+          <Address></Address>Address is Required!
+        </div>
+        <br>
+
+
+        <label for="inputPassword">Password</label>
+        <input formControlName="password" type="password" id="inputPassword" class="form-control"
+          placeholder="Password">
+        <div *ngIf="Customerform.get('password').touched && Customerform.get('password').invalid"
+          class="alert alert-danger">
+          Password is Required!
+        </div>
+
+         <br>
+        <button class="btn " style= "color:black;background-color:rgb(222, 184, 135);"type="submit" [disabled]="!Customerform.valid">Sign up</button>
+
+      </form>
+
+    </mat-card>
+  </div>
+
+</div>

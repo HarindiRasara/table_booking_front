@@ -1,0 +1,24 @@
+<app-nav-log></app-nav-log>
+<div class="body">
+  <form (ngSubmit)="updateItem()">
+    <div class="form-group" >
+      <label for="itemname">Item Name</label>
+      <input type= "text" name="itemname" [(ngModel)]="menu.itemname" class="form-control">
+
+    </div>
+    <div class="form-group">
+        <label for="itemprice">Item Price</label>
+        <input type= "text" name="itemprice" [(ngModel)]="menu.itemprice" class="form-control">
+
+      </div>
+      <div class="form-group">
+          <label for="description">Image</label>
+
+    <input type="file" id="" class="form-control "   (change)="upload($event)"  accept=".png,.jpg"   >
+
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-succes">
+
+  </form>
+</div>

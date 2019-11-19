@@ -1,0 +1,15 @@
+.card {
+  background-color:rgb(217, 217, 217);
+}
+
+.body{
+  background-image: url('../../assets/images/nemitem.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: auto;
+  height: 2000px;
+  align-items: center;
+  align-content: center;
+}

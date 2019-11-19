@@ -1,0 +1,16 @@
+.sign{
+    margin-left: 33%;
+    margin-right: 33%;
+}
+.body {
+    background-image: url('../../assets/images/resturentowner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 1200px;
+    align-items: center;
+    align-content: center;
+}
+
