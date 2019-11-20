@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
   riderName : any
   riderId : any
   total : any
+  orderstatus:any
 
   marked: boolean = true;
 
@@ -58,6 +59,7 @@ export class OrdersComponent implements OnInit {
       "ridername": this.riderName,
       "riderid": this.riderId,
       "totalcost":this.total,
+      "orderstatus":this.orderstatus,
     }
 
     this.menuService.addOrder(obj)
